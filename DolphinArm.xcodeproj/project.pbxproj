@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142FB9732ABA91A8001C705C /* MechanicalArmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142FB9722ABA91A8001C705C /* MechanicalArmView.swift */; };
+		14639D4A2AA7013A00A71B8A /* ArmFreeControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14639D492AA7013A00A71B8A /* ArmFreeControlView.swift */; };
 		146F98852A9CA0FC00C33325 /* DolphinArmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F98842A9CA0FC00C33325 /* DolphinArmApp.swift */; };
 		146F98872A9CA0FC00C33325 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F98862A9CA0FC00C33325 /* ContentView.swift */; };
 		146F98892A9CA0FE00C33325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146F98882A9CA0FE00C33325 /* Assets.xcassets */; };
 		146F988C2A9CA0FE00C33325 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146F988B2A9CA0FE00C33325 /* Preview Assets.xcassets */; };
+		14F734B92ABC351400B43EAE /* BTSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F734B72ABC351400B43EAE /* BTSearchManager.swift */; };
+		14F734BA2ABC351400B43EAE /* BluetoothSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F734B82ABC351400B43EAE /* BluetoothSearchView.swift */; };
+		14F734BD2ABC35E200B43EAE /* JGProgressHUD-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 14F734BC2ABC35E200B43EAE /* JGProgressHUD-SwiftUI */; };
+		14F734C02ABC360200B43EAE /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 14F734BF2ABC360200B43EAE /* AlertToast */; };
+		14F734C32ABC364B00B43EAE /* HomeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F734C22ABC364B00B43EAE /* HomeContainer.swift */; };
+		14F734C62ABC366400B43EAE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F734C52ABC366400B43EAE /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142FB9722ABA91A8001C705C /* MechanicalArmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicalArmView.swift; sourceTree = "<group>"; };
+		14639D492AA7013A00A71B8A /* ArmFreeControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmFreeControlView.swift; sourceTree = "<group>"; };
 		146F98812A9CA0FC00C33325 /* DolphinArm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolphinArm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146F98842A9CA0FC00C33325 /* DolphinArmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolphinArmApp.swift; sourceTree = "<group>"; };
 		146F98862A9CA0FC00C33325 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		146F98882A9CA0FE00C33325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		146F988B2A9CA0FE00C33325 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		14F734B72ABC351400B43EAE /* BTSearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTSearchManager.swift; sourceTree = "<group>"; };
+		14F734B82ABC351400B43EAE /* BluetoothSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSearchView.swift; sourceTree = "<group>"; };
+		14F734C22ABC364B00B43EAE /* HomeContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContainer.swift; sourceTree = "<group>"; };
+		14F734C52ABC366400B43EAE /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F734BD2ABC35E200B43EAE /* JGProgressHUD-SwiftUI in Frameworks */,
+				14F734C02ABC360200B43EAE /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +67,15 @@
 		146F98832A9CA0FC00C33325 /* DolphinArm */ = {
 			isa = PBXGroup;
 			children = (
+				14F734C42ABC366400B43EAE /* Toast */,
+				14F734C12ABC364B00B43EAE /* Home */,
+				14F734B62ABC351400B43EAE /* Bluetooth */,
 				146F98842A9CA0FC00C33325 /* DolphinArmApp.swift */,
 				146F98862A9CA0FC00C33325 /* ContentView.swift */,
 				146F98882A9CA0FE00C33325 /* Assets.xcassets */,
 				146F988A2A9CA0FE00C33325 /* Preview Content */,
+				14639D492AA7013A00A71B8A /* ArmFreeControlView.swift */,
+				142FB9722ABA91A8001C705C /* MechanicalArmView.swift */,
 			);
 			path = DolphinArm;
 			sourceTree = "<group>";
@@ -65,6 +86,31 @@
 				146F988B2A9CA0FE00C33325 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		14F734B62ABC351400B43EAE /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				14F734B72ABC351400B43EAE /* BTSearchManager.swift */,
+				14F734B82ABC351400B43EAE /* BluetoothSearchView.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		14F734C12ABC364B00B43EAE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				14F734C22ABC364B00B43EAE /* HomeContainer.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		14F734C42ABC366400B43EAE /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				14F734C52ABC366400B43EAE /* Toast.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +129,10 @@
 			dependencies = (
 			);
 			name = DolphinArm;
+			packageProductDependencies = (
+				14F734BC2ABC35E200B43EAE /* JGProgressHUD-SwiftUI */,
+				14F734BF2ABC360200B43EAE /* AlertToast */,
+			);
 			productName = DolphinArm;
 			productReference = 146F98812A9CA0FC00C33325 /* DolphinArm.app */;
 			productType = "com.apple.product-type.application";
@@ -104,13 +154,18 @@
 			};
 			buildConfigurationList = 146F987C2A9CA0FC00C33325 /* Build configuration list for PBXProject "DolphinArm" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 146F98782A9CA0FC00C33325;
+			packageReferences = (
+				14F734BB2ABC35E200B43EAE /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */,
+				14F734BE2ABC360200B43EAE /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 146F98822A9CA0FC00C33325 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14639D4A2AA7013A00A71B8A /* ArmFreeControlView.swift in Sources */,
+				14F734C62ABC366400B43EAE /* Toast.swift in Sources */,
+				14F734B92ABC351400B43EAE /* BTSearchManager.swift in Sources */,
 				146F98872A9CA0FC00C33325 /* ContentView.swift in Sources */,
 				146F98852A9CA0FC00C33325 /* DolphinArmApp.swift in Sources */,
+				142FB9732ABA91A8001C705C /* MechanicalArmView.swift in Sources */,
+				14F734BA2ABC351400B43EAE /* BluetoothSearchView.swift in Sources */,
+				14F734C32ABC364B00B43EAE /* HomeContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,17 +325,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DolphinArm/Preview Content\"";
-				DEVELOPMENT_TEAM = GSH6P3Q8U8;
+				DEVELOPMENT_TEAM = W6DU6USJVV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "海豚机械臂";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "搜索和连接海豚机械臂";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +347,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lexiangqicheng.DolphinArm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -293,17 +362,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DolphinArm/Preview Content\"";
-				DEVELOPMENT_TEAM = GSH6P3Q8U8;
+				DEVELOPMENT_TEAM = W6DU6USJVV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "海豚机械臂";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "搜索和连接海豚机械臂";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +384,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lexiangqicheng.DolphinArm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -339,6 +416,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		14F734BB2ABC35E200B43EAE /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+		14F734BE2ABC360200B43EAE /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		14F734BC2ABC35E200B43EAE /* JGProgressHUD-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14F734BB2ABC35E200B43EAE /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */;
+			productName = "JGProgressHUD-SwiftUI";
+		};
+		14F734BF2ABC360200B43EAE /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14F734BE2ABC360200B43EAE /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 146F98792A9CA0FC00C33325 /* Project object */;
 }
