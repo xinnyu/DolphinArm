@@ -23,7 +23,8 @@ class GameJoystickViewModel: ObservableObject {
     @Published var moveZ: Int8 = 0
 
     @Published var gripperValue: Double = 0
-    
+    @Published var linearAxisValue: Double = 0
+
     private var moveTimer: Timer?
 
     func handleButtonAction(_ action: ButtonAction) {
@@ -83,6 +84,7 @@ class GameJoystickViewModel: ObservableObject {
     
     func sendResetCmd() {
         gripperValue = 0
+        linearAxisValue = 0
         var data = Data()
         data.append(contentsOf: [0xA5, 0xA5, 0x01, 90, 40, 130, 0, 0])
         // 在这里处理发送数据
@@ -103,6 +105,18 @@ class GameJoystickViewModel: ObservableObject {
             Toast.shared.showComplete(title: "发送成功")
         }
     }
+    
+    /// 直线模组运动
+    func sendLineModuleCmd() {
+        let location = Int(linearAxisValue)
+        let hlocation = location / 256
+        let llocation = location % 256
+        var data = Data()
+        data.append(contentsOf: [0xA5, 0xA5, 0x03, UInt8(hlocation), UInt8(llocation)])
+        BTSearchManager.default.sendDatasWithoutResponse([data]) {
+            Toast.shared.showComplete(title: "发送成功")
+        }
+    }
 }
 
 
@@ -110,12 +124,23 @@ class GameJoystickViewModel: ObservableObject {
 struct GameJoystickView: View {
     
     @StateObject var viewModel = GameJoystickViewModel()
+    
+    var spacing: CGFloat {
+        let screenHeight = UIScreen.main.bounds.height
+        if screenHeight > 800 {
+            return 50
+        } else if screenHeight > 680 {
+            return 25
+        } else {
+            return 12
+        }
+    }
 
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.8), Color.blue.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
-            VStack(spacing: 70) {
+            VStack(spacing: spacing) {
                 DirectionalPad(action: viewModel.handleButtonAction)
                 // “前”和“后”按钮
                 HStack(spacing: 40) {
@@ -124,7 +149,12 @@ struct GameJoystickView: View {
                 }
                 SliderView(title: "夹爪", value: $viewModel.gripperValue, range: 0...37) {
                     viewModel.sendGripperCmd()
-                }.padding(.horizontal, 30)
+                }
+                .padding(.horizontal, 30)
+                SliderView(title: "直线轴", value: $viewModel.linearAxisValue, range: 0...1500, onSlideEnded: {
+                    viewModel.sendLineModuleCmd()
+                }, unitString: "")
+                .padding(.horizontal, 30)
             }
         }
         .navigationBarTitle("式教模式", displayMode: .inline)

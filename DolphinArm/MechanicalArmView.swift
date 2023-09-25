@@ -82,7 +82,7 @@ class MechanicalArmViewModel: ObservableObject {
             Toast.shared.showComplete(title: "发送成功")
         }
     }
-
+    
 
     func handleButtonAction(_ action: ButtonAction) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
