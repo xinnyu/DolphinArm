@@ -130,7 +130,7 @@ class BTSearchManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate,
             Toast.showError("请选择设备名称为 \(BTMacro.deviceName) 的设备")
             return
         }
-        resetDisconnectTimer()
+//        resetDisconnectTimer()
         connectionStatus = .connecting
         guard centralManager.state == .poweredOn else {
             connectionStatus = .failed
@@ -153,6 +153,7 @@ class BTSearchManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate,
     
     // 发送数据到设备
     private func sendData(data: Data) {
+        print("send data: \(data.map { String(format: "%02x", $0) }.joined())")
         guard let characteristic = writeCharacteristic else {
             sendDataSemaphore?.signal()
             return
@@ -285,7 +286,7 @@ extension BTSearchManager {
             connectionStatus = .connected
             // 发送数据到subject
             dataSubject.send(data)
-            resetDisconnectTimer()
+//            resetDisconnectTimer()
         }
     }
     
@@ -294,6 +295,7 @@ extension BTSearchManager {
         if let error = error {
             print("Error writing characteristic: \(error)")
         } else {
+            print("send success")
             sendDataSemaphore?.signal()
         }
     }

@@ -10,15 +10,15 @@ import SwiftUI
 class MechanicalArmViewModel: ObservableObject {
     
     @Published var rotationValue: Double = 90
-    @Published var bAxisValue: Double = 40
-    @Published var cAxisValue: Double = 130
+    @Published var bAxisValue: Double = 0
+    @Published var cAxisValue: Double = 180
     @Published var gripperValue: Double = 0
     @Published var linearAxisValue: Double = 0
     
     func backToOrigin() {
         rotationValue = 90
-        bAxisValue = 40
-        cAxisValue = 130
+        bAxisValue = 0
+        cAxisValue = 180
         gripperValue = 0
         linearAxisValue = 0
         sendMoveCmd()
@@ -64,9 +64,14 @@ class MechanicalArmViewModel: ObservableObject {
         data.append(UInt8(bAxisValue))
         data.append(UInt8(cAxisValue))
         data.append(UInt8(gripperValue))
+        data.append(UInt8(0))
 //        let value = Int(linearAxisValue)
 //        data.append(contentsOf: withUnsafeBytes(of: value.bigEndian) { Data($0) })
-        BTSearchManager.default.sendDatasWithoutResponse([data]) {
+        sendDatas([data])
+    }
+    
+    func sendDatas(_ datas: [Data]) {
+        BTSearchManager.default.sendDatas(datas) {
             Toast.shared.showComplete(title: "发送成功")
         }
     }
@@ -128,7 +133,7 @@ struct MechanicalArmView: View {
             VStack(spacing: spacing) {
                 Image("armIcon") // 代替机械臂icon
                     .resizable()
-                    .clipShape(.rect(cornerSize: CGSize(width: 20, height: 20)))
+                    .cornerRadius(20)
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color.blue.opacity(0.5))
                     .onTapGesture(count: 3) {
