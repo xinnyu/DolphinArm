@@ -68,18 +68,23 @@ class GameJoystickViewModel: ObservableObject {
         moveTimer?.invalidate()
         moveTimer = nil
     }
+    
+    var lastData: Data?
 
     func sendMoveCmd() {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         var data = Data()
         data.append(contentsOf: [0xA5, 0xA5, 0x02])
         data.append(UInt8(bitPattern: moveX))
         data.append(UInt8(bitPattern: moveY))
         data.append(UInt8(bitPattern: moveZ))
-        // 这里处理发送数据。
-        print("xy-log moveX: \(moveX) moveY: \(moveY) moveZ: \(moveZ)")
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-//        UISelectionFeedbackGenerator().selectionChanged()
-        BTSearchManager.default.sendDatasWithoutResponse([data]) { }
+        
+        if lastData == nil || lastData != data {
+            self.lastData = data
+            // 这里处理发送数据。
+            print("xy-log moveX: \(moveX) moveY: \(moveY) moveZ: \(moveZ)")
+            BTSearchManager.default.sendDatas([data]) { }
+        }
     }
     
     func sendResetCmd() {
@@ -91,7 +96,7 @@ class GameJoystickViewModel: ObservableObject {
         print("xy-log reset")
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
 //        UISelectionFeedbackGenerator().selectionChanged()
-        BTSearchManager.default.sendDatasWithoutResponse([data]) {
+        BTSearchManager.default.sendDatas([data]) {
             Toast.shared.showComplete(title: "复位成功")
         }
     }
