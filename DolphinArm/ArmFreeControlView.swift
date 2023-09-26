@@ -87,7 +87,7 @@ class GameJoystickViewModel: ObservableObject {
         }
     }
     
-    func sendResetCmd() {
+    func sendResetCmd(_ isAuto: Bool = false) {
         gripperValue = 0
         linearAxisValue = 0
         var data = Data()
@@ -97,7 +97,7 @@ class GameJoystickViewModel: ObservableObject {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
 //        UISelectionFeedbackGenerator().selectionChanged()
         BTSearchManager.default.sendDatas([data]) {
-            Toast.shared.showComplete(title: "复位成功")
+            Toast.shared.showComplete(title: isAuto ? "式教模式已自动复位" : "复位成功")
         }
     }
     
@@ -164,8 +164,7 @@ struct GameJoystickView: View {
         }
         .navigationBarTitle("式教模式", displayMode: .inline)
         .onAppear(perform: {
-            Toast.shared.showToast(title: "式教模式已自动复位")
-            viewModel.sendResetCmd()
+            viewModel.sendResetCmd(true)
         })
     }
 }
