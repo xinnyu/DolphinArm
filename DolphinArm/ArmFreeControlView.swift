@@ -159,7 +159,8 @@ struct GameJoystickView: View {
         }
         .navigationBarTitle("式教模式", displayMode: .inline)
         .onAppear(perform: {
-            Toast.shared.showToast(title: "控制之前请先复位")
+            Toast.shared.showToast(title: "式教模式已自动复位")
+            viewModel.sendResetCmd()
         })
     }
 }

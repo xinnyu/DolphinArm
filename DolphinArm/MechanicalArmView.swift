@@ -115,9 +115,9 @@ struct MechanicalArmView: View {
         if screenHeight > 800 {
             return 30
         } else if screenHeight > 680 {
-            return 25
+            return 20
         } else {
-            return 12
+            return 5
         }
     }
 
@@ -128,7 +128,8 @@ struct MechanicalArmView: View {
             VStack(spacing: spacing) {
                 Image("armIcon") // 代替机械臂icon
                     .resizable()
-                    .clipShape(.rect(cornerSize: CGSize(width: 20, height: 20)))
+//                    .clipShape(.rect(cornerSize: CGSize(width: 20, height: 20)))
+                    .cornerRadius(20)
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color.blue.opacity(0.5))
                     .onTapGesture(count: 3) {
